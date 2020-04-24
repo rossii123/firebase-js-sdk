@@ -20,6 +20,13 @@ import { ProviderId } from '../core/providers';
 import { Auth } from './auth';
 import { IdTokenResult } from './id_token';
 
+export interface AdditionalUserInfo {
+  readonly isNewUser: boolean;
+  readonly profile: { [key: string]: unknown } | null;
+  readonly providerId: ProviderId | null;
+  readonly username: string | null;
+}
+
 export interface UserMetadata {
   readonly creationTime?: string;
   readonly lastSignInTime?: string;
